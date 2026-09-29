@@ -10,12 +10,44 @@ import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.TypedQuery;
 import Model.User;
 import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 
 
 
 public class NewUserDB {
-    private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("emailListPU");
+    private static final EntityManagerFactory emf;
+
+static {
+    Map<String, Object> properties = new HashMap<>();
+
+    String dbHost = System.getenv("DB_HOST");
+    String dbUser = System.getenv("DB_USER");
+    String dbPassword = System.getenv("DB_PASSWORD");
+
+    if (dbHost != null && !dbHost.isBlank()) {
+        properties.put(
+            "jakarta.persistence.jdbc.url",
+            "jdbc:postgresql://" + dbHost + ":5432/sqlgateway_db"
+        );
+
+        properties.put(
+            "jakarta.persistence.jdbc.user",
+            dbUser
+        );
+
+        properties.put(
+            "jakarta.persistence.jdbc.password",
+            dbPassword
+        );
+    }
+
+    emf = Persistence.createEntityManagerFactory(
+        "emailListPU",
+        properties
+    );
+}
     
     public static EntityManagerFactory getEmfactory () {
         return emf;

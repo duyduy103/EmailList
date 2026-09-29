@@ -18,19 +18,19 @@
         <properties>
 
             <property name="jakarta.persistence.jdbc.url"
-                      value="jdbc:postgresql://localhost:5432/SQLGateway"/>
+                      value="postgresql://sqlgateway_user:2oDFpMe5cgvVk5uc2RcfVauPkRNNSY36@dpg-datnen6gekts73bhd730-a/sqlgateway_db"/>
 
             <property name="jakarta.persistence.jdbc.driver"
                       value="org.postgresql.Driver"/>
 
             <property name="jakarta.persistence.jdbc.user"
-                      value="postgres"/>
+                      value="sqlgateway_user"/>
 
             <property name="jakarta.persistence.jdbc.password"
-                      value="123456"/>
+                      value="2oDFpMe5cgvVk5uc2RcfVauPkRNNSY36"/>
 
             <property name="jakarta.persistence.schema-generation.database.action"
-                      value="create"/>
+                      value="none"/>
 
         </properties>
 
