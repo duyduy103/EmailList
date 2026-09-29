@@ -15,8 +15,8 @@ public class helper {
         // 1 - get a mail session
         Properties props = new Properties();
         props.put("mail.transport.protocol", "smtp");
-        props.put("mail.smtp.host", "smtp.gmail.com");
-        props.put("mail.smtp.port", 587);
+        props.put("mail.smtp.host", "smtp-relay.brevo.com");
+        props.put("mail.smtp.port", 2525);
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.quitwait", "false");
         props.put("mail.smtp.starttls.enable", "true");
