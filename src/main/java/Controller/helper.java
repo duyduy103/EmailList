@@ -39,8 +39,8 @@ public class helper {
 
         // 4 - send the message
         
-        String username = System.getenv("duy321855@gmail.com");
-        String password = System.getenv("sksx jvik kkcj xisi");
+        String username = System.getenv("MAIL_USERNAME");
+        String password = System.getenv("MAIL_PASSWORD");
 
         System.out.println("MAIL_USERNAME = " + username);
         System.out.println("MAIL_PASSWORD exists = " + (password != null));
